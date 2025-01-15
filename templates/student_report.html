@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .header { text-align: center; }
+        .content { margin: 20px; }
+        .test-table { width: 100%; border-collapse: collapse; }
+        .test-table th, .test-table td { border: 1px solid #000; padding: 8px; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>{{.Title}}</h1>
+    <p>(Academic Session : {{.AcademicSession}})</p>
+    <p>{{.Address}}</p>
+</div>
+<div class="content">
+    <p><strong>Form No.:</strong> {{.FormNo}}</p>
+    <p><strong>Student Name:</strong> {{.StudentName}}</p>
+    <p><strong>Current Batch:</strong> {{.CurrentBatch}}</p>
+    <p><strong>Stream:</strong> {{.Stream}}</p>
+    <p><strong>Course Name & Code:</strong> {{.CourseNameCode}}</p>
+    <p><strong>Study Center & Code:</strong> {{.StudyCenterCode}}</p>
+    <h2>Main Test</h2>
+    <table class="test-table">
+        <thead>
+        <tr>
+            <th>Test Name</th>
+            <th>Batch</th>
+            <th>SA</th>
+            <th>T.Mode</th>
+            <th>PHY (180)</th>
+            <th>CHEM (180)</th>
+            <th>BIO (360)</th>
+            <th>Total Marks (720)</th>
+            <th>%age</th>
+            <th>%ile</th>
+            <th>Test Rank</th>
+            <th>AIR</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{range .Tests}}
+        <tr>
+            <td>{{.TestName}}</td>
+            <td>{{.Batch}}</td>
+            <td>{{.SA}}</td>
+            <td>{{.TMode}}</td>
+            <td>{{.Physics}}</td>
+            <td>{{.Chemistry}}</td>
+            <td>{{.Biology}}</td>
+            <td>{{.Total}}</td>
+            <td>{{.Percentage}}</td>
+            <td>{{.Percentile}}</td>
+            <td>{{.TestRank}}</td>
+            <td>{{.AIR}}</td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
